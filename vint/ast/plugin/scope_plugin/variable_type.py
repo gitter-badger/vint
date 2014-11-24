@@ -1,8 +1,9 @@
-from enum import Enum
+import enum
 from vint.ast.plugin.scope_plugin.scope_type import ScopeType
 
 
-class VariableType(Enum):
+@enum.unique
+class VariableType(enum.Enum):
     GLOBAL = 1
     BUFFER_LOCAL = 2
     WINDOW_LOCAL = 3
@@ -11,6 +12,7 @@ class VariableType(Enum):
     FUNCTION_LOCAL = 6
     PARAMETER = 7
     BUILTIN = 8
+    UNANALYZABLE = 9
 
 
 IdentifierPrefixOfVariableType = {
