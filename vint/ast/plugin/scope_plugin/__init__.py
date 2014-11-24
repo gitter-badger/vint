@@ -108,8 +108,14 @@ class ScopePlugin(AbstractASTPlugin):
             functrion IDENTIFIER1():
             endfunction
 
-            " IDENTIFIER2 is not definition
-            call IDENTIFIER2()
+            " IDENTIFIER2 is definition
+            let IDENTIFIER2 = 0
+
+            " IDENTIFIER3 is not definition
+            call IDENTIFIER3()
+
+            " IDENTIFIER4 is not definition
+            let IDENTIFIER4 += 0
         """
         identifier[ScopePlugin.DEFINITION_IDENTIFIER_FLAG_KEY] = True
 
